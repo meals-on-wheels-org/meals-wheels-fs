@@ -1,0 +1,304 @@
+body {
+    font-family: var(--main-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* IMAGE SLIDESHOW SECTION */
+.slideshow-container {
+    margin-top: 100px !important;
+    max-width: 100%;
+    height: 70vh;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow-container img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Caption text */
+.text {
+    color: white;
+    font-size: var(--big-font-size);
+    font-weight: var(--weight-500);
+    padding: 8px 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* The dots/bullets/indicators */
+.dot-container {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: var(--primary-color);
+}
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* PARAGRAPH SECTION */
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 2rem 10rem;
+    height: 60vh;
+    font-size: var(--h3-font-size);
+    background-color: #f8fff7;
+}
+
+.column {
+    flex: 1;
+    text-align: center;
+    margin: 0 2rem;
+    /* background-color: var(--accent-color);
+    padding: 50px 30px;
+    border-radius: 10px; */
+}
+
+.column h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: var(--weight-800);
+    color: var(--primary-color);
+    font-size: var(--h2-font-size);
+}
+
+.column h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+
+/* DONATE IMAGE SECTION */
+.home-image {
+    position: relative;
+    /* margin-top: 2.5rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.donate-link {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--h1-font-size);
+    font-weight: var(--weight-600);
+    transition: font-size 0.3s ease;
+    text-align: center;
+}
+
+.donate-link:hover {
+    font-size: var(--big-font-size);
+    font-weight: bold;
+}
+
+
+/* VOLUNTEERS SECTION*/
+.volunteer-section {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0;
+  height: 90vh;
+}
+
+.volunteer-title {
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--weight-700);
+}
+
+.volunteer-description {
+  margin-bottom: 100px;
+  font-size: var(--h3-font-size);
+}
+
+.volunteer-testimonials {
+  display: flex;
+  justify-content: space-between;
+}
+
+.volunteer-testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 30%;
+  position: relative;
+  padding-top: 60px; /* Space for the image */
+}
+
+.volunteer-testimonial img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -60px; /* Half of the image height to center it */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid #fff; /* Optional: adds a border to the image */
+}
+
+.volunteer-testimonial blockquote {
+  font-style: italic;
+  color: #555;
+  margin-top: 30px; /* Space between image and text */
+  line-height: 2;
+}
+
+.volunteer-name {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+    
+    .home-content {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .column {
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .slideshow-container {
+        height: 50vh;
+    }
+
+    .slideshow-container img {
+        height: 50vh;
+    }
+
+    .dot-container {
+        bottom: 350px;
+    }
+
+    .home-image {
+        height: auto;
+    }
+
+    .donate-link:hover {
+        font-size: var(--h2-font-size);
+        font-weight: bolder;
+        text-decoration: underline;
+    }
+
+    .volunteer-section {
+        padding-top: 50px;
+    }
+
+    .volunteer-testimonials {
+        flex-direction: column;
+    }
+
+    .volunteer-testimonial {
+        width: 80%;
+        margin: 40px auto;
+    }
+
+    .text {
+        font-size: var(--h2-font-size);
+    }
+
+    .donate-link {
+        font-size: var(--h2-font-size);
+    }
+}
