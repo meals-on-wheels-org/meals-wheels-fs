@@ -22,6 +22,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/donate', function () {
+    return view('donate');
+})->name('donate');
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
 
 // donation can be done without registration
 Route::get('/donationFee', [DonationController::class, 'index']);
@@ -30,8 +38,8 @@ Route::get('/donor', [DonationController::class, 'donor']);
 Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
 
 // stripe 
-route::get('/stripe',[DonationController::class,'stripe']);
-route::post('/stripe',[DonationController::class,'stripePost'])->name('stripe.post');
+route::get('/stripe', [DonationController::class, 'stripe']);
+route::post('/stripe', [DonationController::class, 'stripePost'])->name('stripe.post');
 
 // completion
 Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('getCompletion');
@@ -96,7 +104,6 @@ Route::group(['prefix' => 'member'], function () {
     Route::get('/reassesment/{id}', [MemberController::class, 'reassesment'])->name('member#reassesment');
     Route::post('/newReassesment//{id}', [MemberController::class, 'newReassesment'])->name('member#newReassesment');
     Route::post('/member/updateProfile/{id}', [MemberController::class, 'updateProfilePost'])->name('member.updateProfilePost');
-
 });
 
 
@@ -114,7 +121,6 @@ Route::group(['prefix' => 'partner'], function () {
     Route::get('/updateOrder/{id}', [OrderController::class, 'updateOrder'])->name('order#updateOrder');
     Route::get('/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner#updateProfile');
     Route::post('/partner/updateProfile/{id}', [PartnerController::class, 'updateProfilePost'])->name('partner.updateProfilePost');
-
 });
 
 
@@ -159,9 +165,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/memberUpdated/{id}', [AdminController::class, 'saveUpdateM'])->name('admin#memberUpdated');
     Route::post('/partnerUpdated/{id}', [AdminController::class, 'saveUpdateP'])->name('admin#partnerUpdated');
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
-
-
-    
 });
 
 

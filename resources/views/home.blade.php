@@ -16,7 +16,7 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="/" class="flex items-center">
-                        <img src="{{ asset('images/merrymeals.png') }}" class="w-20 h-20" alt="Meals on Wheels Logo" />
+                        <!-- <img src="{{ asset('images/merrymeals.png') }}" class="w-20 h-20" alt="Meals on Wheels Logo" /> -->
                         <span class="ml-3 text-xl font-bold">Meals on Wheels</span>
                     </a>
                 </div>
